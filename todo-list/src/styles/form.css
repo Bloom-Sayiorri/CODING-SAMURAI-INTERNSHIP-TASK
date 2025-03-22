@@ -1,0 +1,45 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    width: 100%;
+}
+
+.heading {
+    font-size: 2em;
+}
+
+.form {
+    /* display: flex; */
+}
+
+.todo-label, .todo-input {
+    width: 100%;
+}
+
+.todo-label {
+    font-size: 1.5em;
+}
+
+.todo-input {
+    padding: 1em;
+    border: none;
+    border-radius: 1.8em;
+}
+
+.todo-input:placeholder {
+    color: gray;
+    font-size: 1.4em;
+}
+
+.button {
+    background: rgb(105, 197, 228);
+    color: white;
+    padding: .6em;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}

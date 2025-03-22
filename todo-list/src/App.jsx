@@ -1,65 +1,75 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-// import Todos from "./pages/Todos";
+import Form from "./pages/Form";
+import Todos from "./pages/Todos";
 
 function App() {
-	const [todos, setTodos] = useState({
-		description: "",
-		completed: false,
+	const [todos, setTodos] = useState(() => {
+		const localValue = localStorage.getItem("TODOS");
+		if (localValue == null) return [];
+		return JSON.parse(localValue);
 	});
+	// const [ editedTodo, setEditedTodo ] = useState("");
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		// localStorage.setItem("todos", parse(...todos));
-	};
+	useEffect(() => {
+		localStorage.setItem("TODOS", JSON.stringify(todos));
+	}, [todos]);
 
-	const editTodo = () => {
-		localStorage.getItem("todos", JSON.stringify(todos));
-	};
+	function toggleComplete(id, completed) {
+		const updatedTodos = todos.map(todo => {
+			if (todo.id === id) {
+				return {...todo, completed}
+			} else {
+				return todo
+			}
+		});
+		setTodos(updatedTodos);
+		// setTodos((currentTodos) => {
+		// 	return currentTodos.map((todo) => {
+		// 		if (todo.id === id) {
+		// 			return { ...todos, completed };
+		// 		}
+		// 	});
+		// });
+	}
 
-	const displayedTodos = todos.map((todo, index) => {
-		return (
-			<li key={index} className="todo-list">
-				<div className="todo-details">
-					<p className="completed">{todo.completed}</p>
-					<h3 className="description">{todo.description}</h3>
-				</div>
-				<div className="todo-buttons">
-					<button role="button" className="edit">
-						<FaEdit />
-					</button>
-					<button role="button" className="delete">
-						<MdDeleteForever />
-					</button>
-				</div>
-			</li>
+	function addTodo(newTodo) {
+		const updatedTodos = [...todos, newTodo];
+		setTodos(updatedTodos);
+	}
+
+	function editTodo(id, editedTodo) {
+		// find a todo using its id and append new text to its existing text
+		console.log("edit todo");
+		const updatedTodos = todos.map(todo => {
+			if(todo.id === id) {
+				return {...todo, editedTodo}
+			} else {
+				return todo
+			}
+		});
+		setTodos(updatedTodos);
+		// setTodos(currentTodos => {
+		// 	return currentTodos.filter(todo => {
+		// 		// find the todo using its id
+		// 		if(todo.id === id) {
+		// 			// return the other todos along with the new todo and add them to state.
+		// 			return {...todos, editedTodo}
+		// 		};
+		// 	})
+		// });
+	}
+
+	function deleteTodo(id) {
+		setTodos((currentTodos) =>
+			currentTodos.filter((todo) => todo.id !== id)
 		);
-	});
+	}
 
 	return (
-		// <BrowserRouter>
-		// 	<div className="App">
-		// 		<Todos />
-		// 	</div>
-		// </BrowserRouter>
-
-		<div className="container">
-			<section>
-				<form className="form" onSubmit={handleSubmit}>
-					<h3 className="heading">New Todo</h3>
-					<label htmlFor="todo" className="todo-label"></label>
-					<input
-						type="text"
-						id="todo"
-						name="todo"
-						value={todos}
-						onChange={(e) => {
-							setTodos(e.target.value);
-						}}
-						className="todo-input"
-					/>
-				</form>
-			</section>
+		<div className="App">
+			<Form addTodo={addTodo} todos={todos} setTodos={setTodos} />
+			<Todos todos={todos} toggleComplete={toggleComplete} editTodo={editTodo} deleteTodo={deleteTodo} />
 		</div>
 	);
 }
