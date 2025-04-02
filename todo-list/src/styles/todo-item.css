@@ -1,0 +1,31 @@
+.todo-item {
+
+}
+
+.todo-details {
+
+}
+
+.completed {
+
+}
+
+.description {
+
+}
+
+.todo-buttons {
+    display: flex;
+    place-content: center;
+    gap: 1em;
+}
+
+.edit {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.delete {
+    font-size: 2em;
+    cursor: pointer;
+}
