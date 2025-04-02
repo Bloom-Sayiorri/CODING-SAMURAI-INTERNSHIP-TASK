@@ -7,7 +7,7 @@ const data = [
         imgUrl: portfolio,
         title: 'Static Portfolio',
         stacks: ['React', 'CSS3'],
-        demoUrl: '',
+        demoUrl: 'https://static-portfolio-psi.vercel.app/',
         githubUrl: 'https://github.com/Bloom-Sayiorri/CODING-SAMURAI-INTERNSHIP-TASK/tree/main/static-portfolio'
     },
     {
