@@ -1,0 +1,32 @@
+.navbar {
+    padding: 1.5rem;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.home_link {
+    display: flex;
+    text-decoration: none;
+    font-size: 4rem;
+    color: rgb(3, 230, 255);
+}
+
+.other_links{
+    display: flex;
+    margin-left: auto;
+    gap: 4rem;
+    font-size: 1.9rem;
+}
+
+.child_links {
+    text-decoration: none;
+    color: rgb(0, 255, 251);
+}
+
+.child_links:hover {
+    color: white;
+    text-decoration: underline 2px rgb(0, 255, 247);
+    transform: scale(1.1);
+    transition: ease-in-out 1s linear;
+}

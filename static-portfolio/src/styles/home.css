@@ -1,0 +1,137 @@
+.home {
+    height: 600px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.heading {
+    background-image: linear-gradient(to right, rgb(118, 222, 233), rgb(27, 27, 224));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 40px;
+}
+
+.details {
+    width: 500px;
+    overflow: hidden;
+    text-wrap: wrap;
+    font-size: 20px;
+}
+
+.code {
+    color: rgb(246, 185, 3);
+}
+
+.img_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    object-fit: cover;
+    height: 400px;
+}
+
+.image {
+    border-radius: 15px;
+    /* padding-right: 20px; */
+    margin-top: 50%;
+    height: inherit;
+
+    /* width: inherit; */
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+@media screen and (max-width: 340px) {
+
+}
+/* xs */
+@media (min-width: 475px) {
+    .container {
+        max-width: 475px;
+    }
+}
+/* sm */
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+/* md */
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+/* lg */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+/* xl */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+/* 2xl */
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
+/* Desktop First */
+
+.container {
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+/* 2xl */
+@media (max-width: 1536px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+/* xl */
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+/* lg */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 768px;
+    }
+}
+/* md */
+@media (max-width: 768px) {
+    .container {
+        max-width: 648px;
+    }
+}
+/* sm */
+@media (max-width: 648px) {
+    .container {
+        max-width: 475px;
+    }
+}
+/* xs */
+@media (max-width: 475px) {
+    .container {
+        max-width: 100%;
+    }
+}

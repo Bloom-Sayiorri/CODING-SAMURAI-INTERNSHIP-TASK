@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function Footer() {
 	return (
-		<footer className="flex justify-center items-center mt-auto w-full sticky bottom-0 left-0">
+		<footer className="flex justify-center items-center w-full fixed bottom-0 left-0 mb-3">
 			<nav className="">
 				<ul className="">
 					<NavLink>{/*ICONS FOR NAV*/}</NavLink>

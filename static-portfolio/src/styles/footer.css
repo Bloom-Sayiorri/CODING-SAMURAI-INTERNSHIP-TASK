@@ -1,0 +1,33 @@
+.footer {
+    /* background-color: antiquewhite; */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    height: max-content;
+}
+
+.first-section, .second-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: inherit;
+    margin: 2px 0;
+    padding: 5px 40px;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.link:active {
+    color: white;
+}
+
+.link:hover {
+    color: rgb(223, 154, 35);
+}

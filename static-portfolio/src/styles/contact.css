@@ -1,0 +1,20 @@
+.container {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.reach {
+    font-size: 50px;
+}
+
+.tel {
+    font-size: 30px;
+}
+
+.email {
+    font-size: 30px;
+}

@@ -1,18 +1,39 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import '../styles/navbar.css'
 
 function Navbar() {
   return (
-    <header className="bg-slate-100 flex place-content-between w-full h-inherit py-4 px-4 fixed top-0 left-0 z-10">
-        <h2 className="">Navbar</h2>
-        <nav className="">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/details">Details</NavLink>
-            <NavLink to="/projects">Projects</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
-        </nav>
-        {/* ICON FOR THEMES */}
-    </header>
+    <div className='navbar'>
+      <NavLink to='/'className='home_link'>Bloom Sayiorri</NavLink>
+      <nav className='other_links'>
+        <NavLink
+          to='/'
+          className='child_links'
+          style={({ isActive }) => {return isActive ? { color: "white", textDecoration: "underline 2px rgb(0, 255, 247)" } : {};}}
+        >Home</NavLink>
+        <NavLink
+          to='/skills'
+          className='child_links'
+          style={({ isActive }) => {return isActive ? { color: "white", textDecoration: "underline 2px rgb(0, 255, 247)" } : {};}}
+        >Skills</NavLink>
+        <NavLink
+          to='/projects'
+          className='child_links'
+          style={({ isActive }) => {return isActive ? { color: "white", textDecoration: "underline 2px rgb(0, 255, 247)" } : {};}}
+        >Projects</NavLink>
+        <NavLink
+          to='/contact'
+          className='child_links'
+          style={({ isActive }) => {return isActive ? { color: "white", textDecoration: "underline 2px rgb(0, 255, 247)" } : {};}}
+        >Contact</NavLink>
+        {/* <NavLink
+          to='/contact'
+          className='child_links'
+          style={({ isActive }) => {return isActive ? { color: "white", textDecoration: "underline 2px rgb(0, 255, 247)" } : {};}}
+        >Contact</NavLink> */}
+      </nav>
+    </div>
   )
 }
 
