@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/contact.css";
 
 function Contact() {
 	const [info, setInfo] = useState({
@@ -17,15 +18,15 @@ function Contact() {
 	};
 
 	const handleClick = () => {
-		console.log("clicked")
+		console.log("clicked");
 	};
 
 	return (
-		<div className="">
-			<h2 className="">Contact Me</h2>
-			<form onSubmit={handleSubmit} className="">
+		<div className="container">
+			<h2 className="form-title">Contact Me</h2>
+			<form onSubmit={handleSubmit} className="form">
 				<label htmlFor="name" className="">
-					Name:
+					Name
 				</label>
 				<input
 					type="text"
@@ -34,11 +35,11 @@ function Contact() {
 					placeholder="Enter name..."
 					value={info.name}
 					onChange={handleChange}
-                    required={true}
+					required={true}
 					className=""
 				/>
 				<label htmlFor="email" className="">
-					Email:
+					Email
 				</label>
 				<input
 					type="email"
@@ -47,11 +48,11 @@ function Contact() {
 					placeholder="Enter email..."
 					value={info.email}
 					onChange={handleChange}
-                    required={true}
+					required={true}
 					className=""
 				/>
 				<label htmlFor="comments" className="">
-					Comments:
+					Comments
 				</label>
 				<textarea
 					id="comments"
@@ -64,10 +65,10 @@ function Contact() {
 					resize={false}
 				/>
 				<button
-                    type="submit"
+					type="submit"
 					onClick={handleClick}
-                    className="cursor-pointer"
-                >
+					className="submit-btn"
+				>
 					Submit
 				</button>
 			</form>

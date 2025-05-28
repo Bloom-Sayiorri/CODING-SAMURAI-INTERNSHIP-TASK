@@ -37,34 +37,35 @@
 // }
 
 // export default Projects;
-import React from 'react'
-import { NavLink } from 'react-router-dom';
-import '../styles/projects.css'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "../styles/projects.css";
 
-function Projects({projects}) {
-  const displayedProject = projects.map((project) => {
-    return (
-      <li className='list'>
-        <img src={project.imgUrl} alt="Project" className='imgUrl'/>
-        <div className='details'>
-          <h3 className='title'>{project.title}</h3>
-          {project.stacks.map((stack) => {
-            return (
-              <p className='stack'>{stack}</p>
-            )
-          })}
-          <NavLink to={project.demoUrl} className='links'>Live Demo</NavLink>
-          <NavLink to={project.githubUrl} className='links'>Github Code</NavLink>
-        </div>
-        
-      </li> 
-    )
-  })
-  return (
-    <ul className='wrapper'>
-      {displayedProject}
-    </ul>
-  )
+function Projects({ projects }) {
+	const displayedProject = projects.map((project) => {
+		return (
+			<li className="list">
+				<img src={project.imgUrl} alt="Project" className="imgUrl" />
+				<div className="details">
+					<h3 className="title">{project.title}</h3>
+					{project.stacks.map((stack) => {
+						return <p className="stack">{stack}</p>;
+					})}
+					<a href={project.demoUrl} target="_blank" className="links">
+						Live Demo
+					</a>
+					<a
+						href={project.githubUrl}
+						target="_blank"
+						className="links"
+					>
+						Github Code
+					</a>
+				</div>
+			</li>
+		);
+	});
+	return <ul className="wrapper">{displayedProject}</ul>;
 }
 
-export default Projects
+export default Projects;
